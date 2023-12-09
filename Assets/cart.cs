@@ -41,7 +41,7 @@ public class cart : MonoBehaviour
         {
             Vector3 forward = transform.TransformDirection(Vector3.back);
             Vector3 toCart = cartObj.position - transform.position;
-            Debug.Log(Vector3.Dot(forward, toCart));
+            //Debug.Log(Vector3.Dot(forward, toCart));
             if (Vector3.Dot(Vector3.up, transform.up) < 0)
             {
                 Debug.Log("flipped");
