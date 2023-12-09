@@ -22,8 +22,8 @@ public class cart : MonoBehaviour
         //always move player forward
         if (isPlayer2)
         {
-            horizontal = Input.GetAxisRaw("Horizontal");
-            vertical = Input.GetAxisRaw("Vertical");
+            horizontal = Input.GetAxisRaw("Horizontal1");
+            vertical = Input.GetAxisRaw("Vertical1");
         }
         else
         {
