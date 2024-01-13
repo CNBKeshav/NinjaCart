@@ -2378,7 +2378,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14892
+  m_Name: pb_Mesh14968
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4283,7 +4283,17 @@ PrefabInstance:
     - target: {fileID: 7916683184298980646, guid: bc50310d872f39d4da1758e0dd038dd7,
         type: 3}
       propertyPath: Speed
-      value: 7
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916683184298980646, guid: bc50310d872f39d4da1758e0dd038dd7,
+        type: 3}
+      propertyPath: isPlayer2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916683184298980646, guid: bc50310d872f39d4da1758e0dd038dd7,
+        type: 3}
+      propertyPath: Acceleration
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7916683184298980647, guid: bc50310d872f39d4da1758e0dd038dd7,
         type: 3}

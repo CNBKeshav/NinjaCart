@@ -3,21 +3,27 @@
 public class cart : MonoBehaviour
 {
     public Transform cartObj;
-    public float Speed = 20;
+    public float Acceleration = 1;
     public float RotateSpeed = 10;
     public bool isPlayer2;
-
+    private float Speed;
     private Rigidbody rb;
 
     void Start()    
     {
         rb = GetComponent<Rigidbody>();
+        Speed = 0;
     }
 
     void FixedUpdate()
     {
         float horizontal;
         float vertical;
+        
+        
+
+
+
 
         //always move player forward
         if (isPlayer2)
@@ -29,13 +35,32 @@ public class cart : MonoBehaviour
         {
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
+            Debug.Log(horizontal + "-" + vertical);
         }
 
 
-        // transform.Translate(Vector3.left * horizontal * speed * Time.deltaTime);
+        if (vertical != 0)
+        {
+            Speed += Acceleration * vertical;
+        }
+        else
+        {
+            if (Speed > 0) 
+            {
+                Speed -= Acceleration;
+            }   
+            else if (Speed < 0) 
+            {
+                Speed += Acceleration;
+            }
+        }
+        Debug.Log(Speed);
 
+
+
+        // transform.Translate(Vector3.left * horizontal * speed * Time.deltaTime);
         transform.RotateAround(Vector3.up, horizontal * RotateSpeed * Time.deltaTime);
-        transform.Translate(Speed * Time.deltaTime * vertical * Vector3.back);
+        transform.Translate(Speed * Time.deltaTime * Vector3.back);
         rb.AddForce(Speed * Time.deltaTime * vertical * Vector3.back);
         if (cartObj)
         {
