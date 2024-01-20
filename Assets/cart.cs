@@ -3,16 +3,20 @@
 public class cart : MonoBehaviour
 {
     public Transform cartObj;
-    public float Acceleration = 1;
-    public float RotateSpeed = 10;
+    public float acceleration = 1;
+    public float rotateSpeed = 10;
     public bool isPlayer2;
-    private float Speed;
+    private float speed;
     private Rigidbody rb;
+    [Tooltip("minimum speed is 0")]
+    public float maxSpeed = 10;
+    public float backwardSpeedMultiplyer = 0.5f;
+    //minimum speed is 0
 
     void Start()    
     {
         rb = GetComponent<Rigidbody>();
-        Speed = 0;
+        speed = 0;
     }
 
     void FixedUpdate()
@@ -20,7 +24,7 @@ public class cart : MonoBehaviour
         float horizontal;
         float vertical;
         
-        
+   
 
 
 
@@ -38,30 +42,56 @@ public class cart : MonoBehaviour
             Debug.Log(horizontal + "-" + vertical);
         }
 
-
+        //check if player is trying to move forward or backwards
         if (vertical != 0)
         {
-            Speed += Acceleration * vertical;
+            speed += acceleration * vertical;
+            if (speed > maxSpeed)
+            {
+                speed = maxSpeed;
+            } else if (speed < -maxSpeed * backwardSpeedMultiplyer)
+            {
+                speed = -maxSpeed * backwardSpeedMultiplyer;
+            }
+            
         }
         else
         {
-            if (Speed > 0) 
+            //check player direction
+            if (speed > 0) 
             {
-                Speed -= Acceleration;
+
+                if (speed - acceleration < 0)
+                {
+                    speed = 0;
+                }
+                else {
+                    speed -= acceleration;
+                }
+
             }   
-            else if (Speed < 0) 
+            else if (speed < 0) 
             {
-                Speed += Acceleration;
+
+                if (speed + acceleration > 0)
+                {
+                    speed = 0;
+                } else
+                {
+                    speed += acceleration;
+                }
+                
+
             }
         }
-        Debug.Log(Speed);
+        Debug.Log(speed);
 
 
 
         // transform.Translate(Vector3.left * horizontal * speed * Time.deltaTime);
-        transform.RotateAround(Vector3.up, horizontal * RotateSpeed * Time.deltaTime);
-        transform.Translate(Speed * Time.deltaTime * Vector3.back);
-        rb.AddForce(Speed * Time.deltaTime * vertical * Vector3.back);
+        transform.RotateAround(Vector3.up, horizontal * rotateSpeed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * Vector3.back);
+        rb.AddForce(speed * Time.deltaTime * vertical * Vector3.back);
         if (cartObj)
         {
             Vector3 forward = transform.TransformDirection(Vector3.back);

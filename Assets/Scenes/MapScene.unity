@@ -4292,13 +4292,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7916683184298980646, guid: bc50310d872f39d4da1758e0dd038dd7,
         type: 3}
+      propertyPath: rotateSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916683184298980646, guid: bc50310d872f39d4da1758e0dd038dd7,
+        type: 3}
       propertyPath: Acceleration
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916683184298980646, guid: bc50310d872f39d4da1758e0dd038dd7,
+        type: 3}
+      propertyPath: acceleration
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7916683184298980647, guid: bc50310d872f39d4da1758e0dd038dd7,
         type: 3}
       propertyPath: m_Name
-      value: Cart
+      value: Kart
       objectReference: {fileID: 0}
     - target: {fileID: 8437025131112509304, guid: bc50310d872f39d4da1758e0dd038dd7,
         type: 3}
