@@ -34,6 +34,7 @@ public class cart : MonoBehaviour
         {
             horizontal = Input.GetAxisRaw("Horizontal1");
             vertical = Input.GetAxisRaw("Vertical1");
+            Debug.Log(horizontal);
         }
         else
         {
