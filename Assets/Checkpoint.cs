@@ -5,7 +5,7 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     private RaceManager rm;
-    public int count;
+    public int index;
     public bool isLastCheckpoint = false;
 
     // Start is called before the first frame update
@@ -22,10 +22,12 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log($"{transform.name} triggered by {other.name}");
         Player p = other.GetComponent<Player>();
         if (p != null)
         {
-              p.checkPointActivated(this);
+            Debug.Log($"PLAYER DETECTED by {transform.name}");
+            p.checkPointActivated(this);
         }
     }
 }

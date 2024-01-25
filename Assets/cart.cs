@@ -34,13 +34,13 @@ public class cart : MonoBehaviour
         {
             horizontal = Input.GetAxisRaw("Horizontal1");
             vertical = Input.GetAxisRaw("Vertical1");
-            Debug.Log(horizontal);
+            //Debug.Log(horizontal);
         }
         else
         {
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
-            Debug.Log(horizontal + "-" + vertical);
+            //Debug.Log(horizontal + "-" + vertical);
         }
 
         //check if player is trying to move forward or backwards
@@ -85,7 +85,7 @@ public class cart : MonoBehaviour
 
             }
         }
-        Debug.Log(speed);
+        //Debug.Log(speed);
 
 
 

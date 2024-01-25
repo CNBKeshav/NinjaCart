@@ -14,7 +14,7 @@ public class RaceManager : MonoBehaviour
     {
         for (int x = 0; x < checkpoints.Count; x++)
         {
-            checkpoints[x].count = x;
+            checkpoints[x].index = x;
             if (x == checkpoints.Count - 1)
             {
                 checkpoints[x].isLastCheckpoint = true;
