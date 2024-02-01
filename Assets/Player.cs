@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     private int currentLap = 0;
     public TextMeshProUGUI lapText;
     public Leaderboard lb;
+    public string SceneToLoad;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour
                 Debug.Log("FINISHED");
                 if (currentLap == 3)
                 {
+                    SceneManager.LoadScene(SceneToLoad);
                     // logic for end game & scoring.
                 }
                 lapText.text = "LAPS: " + currentLap + "/3";

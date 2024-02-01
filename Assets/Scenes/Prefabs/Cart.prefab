@@ -5676,6 +5676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lapText: {fileID: 6916750379350270867}
   lb: {fileID: 0}
+  SceneToLoad: Main menu
 --- !u!65 &5050361648664894105
 BoxCollider:
   m_ObjectHideFlags: 0
