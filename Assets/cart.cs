@@ -17,6 +17,9 @@ public class cart : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         speed = 0;
+
+        //make acceleration per second instead of per frame
+        acceleration = acceleration / 60;
     }
 
     void FixedUpdate()
