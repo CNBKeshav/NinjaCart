@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     private int place;
-    private int currentCheckpoint = 0;
-    private int currentLap = 0;
+    public int currentCheckpoint = 0;
+    public int currentLap = 0;
     public TextMeshProUGUI lapText;
     public Leaderboard lb;
     public string SceneToLoad;
@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         {
             if (checkpoint.index == 0)
             {
+                currentLap++;
                 Debug.Log("FINISHED");
                 if (currentLap == 3)
                 {
@@ -40,7 +41,7 @@ public class Player : MonoBehaviour
                     // logic for end game & scoring.
                 }
                 lapText.text = "LAPS: " + currentLap + "/3";
-                currentLap++;
+                currentCheckpoint++;
             }
             else if (checkpoint.isLastCheckpoint)
             {

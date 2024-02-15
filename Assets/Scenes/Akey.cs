@@ -15,7 +15,7 @@ public class Akey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey == true)
+        if (Input.GetButtonDown("Fire1") == true)
         {
             SceneManager.LoadScene(SceneToLoad);
         }
