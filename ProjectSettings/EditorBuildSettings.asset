@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapScene.unity
     guid: 707530c855e92664ba4dc627cdd6cec6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1.unity
     guid: ebb9362ef230e5e4fbcdd3000a0b514d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Carts.unity
     guid: abbecc299b14911429bb320ddc2c0fc0
   m_configObjects: {}

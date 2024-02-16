@@ -11,6 +11,7 @@ public class cart : MonoBehaviour
     [Tooltip("minimum speed is 0")]
     public float maxSpeed = 10;
     public float backwardSpeedMultiplyer = 0.5f;
+    
     //minimum speed is 0
 
     void Start()    
@@ -19,21 +20,20 @@ public class cart : MonoBehaviour
         speed = 0;
     }
 
+    public void resetSpeed()
+    {
+        speed = 0;
+    }
     void FixedUpdate()
     {
-        float horizontal;
-        float vertical;
-        
-   
-
-
-
+        float horizontal = 0;
+        float vertical = 0;
 
         //always move player forward
         if (isPlayer2)
         {
-            horizontal = Input.GetAxisRaw("Horizontal1");
-            vertical = Input.GetAxisRaw("Vertical1");
+            //horizontal = Input.GetAxisRaw("Horizontal1");
+            //vertical = Input.GetAxisRaw("Vertical1");
             //Debug.Log(horizontal);
         }
         else
@@ -101,7 +101,8 @@ public class cart : MonoBehaviour
             if (Vector3.Dot(Vector3.up, transform.up) < 0)
             {
                 Debug.Log("flipped");
-                cartObj.rotation = Quaternion.Euler(0, 0, 0);
+                //cartObj.rotation = Quaternion.Euler(0, 0, 0);
+                GetComponent<Player>().resetToCheckpoint();
             }
                 
         }
