@@ -3862,6 +3862,11 @@ PrefabInstance:
       propertyPath: LeftoverFireStable
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5456721340450831919, guid: bc50310d872f39d4da1758e0dd038dd7,
+        type: 3}
+      propertyPath: LastCheckPoint
+      value: 
+      objectReference: {fileID: 1869691565}
     - target: {fileID: 5731973541812161011, guid: bc50310d872f39d4da1758e0dd038dd7,
         type: 3}
       propertyPath: m_Enabled

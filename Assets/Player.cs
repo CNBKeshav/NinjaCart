@@ -16,14 +16,16 @@ public class Player : MonoBehaviour
     public string SceneToLoad;
     public Transform LastCheckPoint;
     public float StartTime;
+    public float ResetHeldTime;
+
     // Start is called before the first frame update
     void Start()
     {
         lapText.text = "LAPS: " + currentLap + "/3";
-        
+
     }
 
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +36,23 @@ public class Player : MonoBehaviour
         else
         {
             TimerText.text = "Time: " + (Time.time - StartTime);
+        }
+
+
+        if (Input.GetButton("Fire1") && Input.GetButton("Fire2"))
+        {
+            ResetHeldTime += Time.deltaTime;
+        }
+        else
+        {
+            ResetHeldTime = 0;
+        }
+   
+
+
+        if (ResetHeldTime >= 1)
+        {
+            SceneManager.LoadScene(SceneToLoad);
         }
     }
 
@@ -52,7 +71,7 @@ public class Player : MonoBehaviour
                 }
                 currentLap++;
                 Debug.Log("FINISHED");
-                if (currentLap == 3)
+                if (currentLap == 4)
                 {
                     // logic for end game & scoring.
                     GameInfo.LastTime = (Time.time - StartTime);
@@ -88,9 +107,9 @@ public class Player : MonoBehaviour
 
 
 
-    public int getPlace() 
-    { 
-        return place; 
+    public int getPlace()
+    {
+        return place;
     }
 
     private void OnCollisionEnter(Collision collision)
